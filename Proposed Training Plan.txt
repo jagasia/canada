@@ -1,0 +1,118 @@
+**Proposed Training Plan**  
+(8 July – 31 July 2026, Mon–Fri, 9 AM – 6 PM)
+ 
+---
+ 
+**Week 1 (8–10 Jul) – Backend Foundations**  
+**Day 1 – Java & Spring Boot Basics**  
+- Java refresher: OOP, collections, streams  
+- Spring Boot setup: project structure, annotations  
+- REST API basics: controllers, request/response mapping  
+- Lab: Build "Hello API"  
+ 
+**Day 2 – REST API Design & Data Access (Part 1)**  
+- REST API design: CRUD, versioning, error handling  
+- JPA/Hibernate basics: entities, relationships  
+- Repository pattern & query methods  
+- Lab: CRUD endpoints with DB integration  
+ 
+**Day 3 – Data Access (Part 2)**  
+- Transaction management  
+- Performance tuning (lazy vs eager loading, caching)  
+- Lab: SQL DB integration project  
+ 
+---
+ 
+**Week 2 (13–17 Jul) – Security + Frontend**  c
+**Day 4 – Spring Security Basics**  
+- Authentication: JWT, OAuth2 basics  
+- Authorization: role‑based access control  
+- Lab: Secure CRUD API  
+ 
+**Day 5 – Vue.js Fundamentals (Part 1)**  
+- Project setup: Vue CLI / Vite  
+- Vue instance & single‑file components  
+- Template syntax: directives (`v-bind`, `v-if`, `v-for`, `v-model`)  
+- Props & events (`props`, `$emit`)  
+- Lab: Simple Vue app consuming backend API  
+ 
+**Day 6 – Vue.js Fundamentals (Part 2)**  
+- Reactivity system: `ref`, `reactive`, `computed`, `watch`  
+- Lifecycle hooks: `onMounted`, `onUpdated`, `onUnmounted`  
+- Forms & two‑way binding with `v-model`  
+- Routing basics with Vue Router  
+- Lab: Build frontend for backend API  
+ 
+**Day 7 – Vue.js Advanced Concepts & Testing**  
+- State management: Vuex / Pinia  
+- Slots & scoped slots  
+- Transitions & animations with `<transition>`  
+- Composition API vs Options API  
+- Unit testing with Vue Test Utils & Jest  
+- Lab: Write tests for Vue frontend  
+ 
+**Day 8 – Advanced Practice Interleaving: Git & DevOps Fundamentals**  
+- Git workflows: branching, merge requests  
+- GitLab CI/CD pipelines: YAML configuration  
+- DevOps fundamentals: containers, deployments  
+- Lab: Setup GitLab CI/CD  
+ 
+---
+ 
+**Week 3 (20–24 Jul) – Databases + Testing + Observability**  
+**Day 9 – Databases (SQL)**  
+- Relational DB design: normalization, indexing  
+- SQL queries: joins, aggregations, stored procedures  
+- Lab: SQL integration with Spring Boot  
+ 
+**Day 10 – Databases (NoSQL)**  
+- MongoDB basics: collections, schema design  
+- Integration with Spring Boot  
+- Lab: Hybrid SQL + MongoDB app  
+ 
+**Day 11 – Automated Testing & Quality Gates (Part 1)**  
+- Testing strategies: unit, integration, API, frontend  
+- Continuous testing in CI/CD  
+- Demo: Veracode quality gates (SAST scan, vulnerability detection, compliance enforcement in CI/CD)  
+ 
+**Day 12 – Automated Testing & Quality Gates (Part 2)**  
+- Lab: CI pipeline enforcing coverage and security checks  
+- Review reports, fix issues  
+ 
+**Day 13 – Advanced Practice Interleaving: Observability & Troubleshooting**  
+- Logging best practices: structured logs, correlation IDs  
+- Monitoring with Splunk: dashboards, alerts  
+- Debugging distributed systems: tracing, log analysis  
+- Lab: Inject errors & troubleshoot  
+ 
+---
+ 
+**Week 4 (27–31 Jul) – Security + Integration + Capstone**  
+**Day 14 – Secure Coding & Compliance (Part 1)**  
+- OWASP Top 10: injection, XSS, CSRF  
+- Secure coding practices: input validation, encryption  
+- Demo: Vulnerability scanning  
+ 
+**Day 15 – Secure Coding & Compliance (Part 2)**  
+- Secrets management  
+- Privacy/compliance: GDPR, HIPAA basics  
+- Lab: Identify & fix vulnerabilities  
+ 
+**Day 16 – Integration Patterns**  
+- Sync vs async communication  
+- Messaging patterns: pub/sub, event‑driven architecture  
+- API gateways & service mesh basics  
+- Lab: Implement messaging integration  
+ 
+**Day 17 – Resilience Techniques**  
+- Resilience strategies: timeouts, retries, circuit breakers  
+- Demo: Spring Cloud + Resilience4j  
+- Lab: Implement resilience in distributed apps  
+ 
+**Day 18 – Agile + AI Tools + Data Engineering (Capstone)**  
+- Agile frameworks: Scrum, Kanban, collaboration norms  
+- Agile ceremonies: sprint planning, stand‑ups, retrospectives  
+- AI dev tools: Microsoft Copilot, GitLab Duo (hands‑on coding session)  
+- Data engineering fundamentals: Databricks, Microsoft data platforms  
+- Capstone project: Full stack app with CI/CD, observability, resilience, AI assistance  
+- Closing ceremony, feedback, certificates  
