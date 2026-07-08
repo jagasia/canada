@@ -1,0 +1,299 @@
+Here's a hands-on assignment that covers the core OOP concepts you've been teaching: **encapsulation, inheritance, abstraction, polymorphism, arrays of objects, collections, constructors, overriding, and runtime polymorphism**.
+
+---
+
+# Hands-on Exercise: Employee Management System
+
+## Objective
+
+Develop a simple Employee Management System using Object-Oriented Programming concepts in Java.
+
+---
+
+## Requirements
+
+### Step 1: Create an abstract class `Employee`
+
+It should contain the following private instance variables:
+
+* id
+* name
+* department
+* salary
+
+Provide:
+
+* Default constructor
+* Parameterized constructor
+* Getters and Setters
+* `toString()` method
+
+Declare the following abstract method:
+
+```java
+public abstract double calculateBonus();
+```
+
+---
+
+### Step 2: Create the following subclasses
+
+#### Developer
+
+Bonus = 20% of salary
+
+---
+
+#### Tester
+
+Bonus = 15% of salary
+
+---
+
+#### Manager
+
+Bonus = 30% of salary
+
+Each class should override the `calculateBonus()` method.
+
+---
+
+### Step 3: Create objects
+
+Create an array of **10 Employee references**.
+
+Store a mixture of:
+
+* Developers
+* Testers
+* Managers
+
+using runtime polymorphism.
+
+Example:
+
+```java
+employees[0] = new Developer(...);
+employees[1] = new Tester(...);
+employees[2] = new Manager(...);
+```
+
+---
+
+### Step 4: Display Employee Details
+
+Using a loop, display
+
+* ID
+* Name
+* Department
+* Salary
+* Bonus
+
+---
+
+### Step 5: Store in a Collection
+
+Create a `HashSet<Employee>`.
+
+Add all employees from the array into the set.
+
+Display the number of unique employees.
+
+---
+
+### Step 6: Search
+
+Ask the user to enter an Employee ID.
+
+Search the employee in the array.
+
+If found, display complete details along with the calculated bonus.
+
+Otherwise display
+
+```
+Employee Not Found
+```
+
+---
+
+## Boilerplate Code
+
+### Employee.java
+
+```java
+public abstract class Employee {
+
+    private int id;
+    private String name;
+    private String department;
+    private double salary;
+
+    public Employee() {
+    }
+
+    public Employee(int id, String name, String department, double salary) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "ID : " + id +
+               ", Name : " + name +
+               ", Department : " + department +
+               ", Salary : " + salary;
+    }
+
+    public abstract double calculateBonus();
+}
+```
+
+---
+
+### Developer.java
+
+```java
+public class Developer extends Employee {
+
+    public Developer(int id, String name, String department, double salary) {
+        super(id, name, department, salary);
+    }
+
+    @Override
+    public double calculateBonus() {
+        // Write your code
+        return 0;
+    }
+}
+```
+
+---
+
+### Tester.java
+
+```java
+public class Tester extends Employee {
+
+    public Tester(int id, String name, String department, double salary) {
+        super(id, name, department, salary);
+    }
+
+    @Override
+    public double calculateBonus() {
+        // Write your code
+        return 0;
+    }
+}
+```
+
+---
+
+### Manager.java
+
+```java
+public class Manager extends Employee {
+
+    public Manager(int id, String name, String department, double salary) {
+        super(id, name, department, salary);
+    }
+
+    @Override
+    public double calculateBonus() {
+        // Write your code
+        return 0;
+    }
+}
+```
+
+---
+
+### EmployeeManagement.java
+
+```java
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class EmployeeManagement {
+
+    public static void main(String[] args) {
+
+        Employee[] employees = new Employee[10];
+
+        // Create 10 Employee objects here
+
+        HashSet<Employee> employeeSet = new HashSet<>();
+
+        // Add employees to HashSet
+
+        // Display all employees and bonus
+
+        // Ask user for Employee ID
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee ID: ");
+        int id = sc.nextInt();
+
+        // Search and display employee details
+
+        sc.close();
+    }
+}
+```
+
+---
+
+## Concepts Evaluated
+
+* ✔ Classes and Objects
+* ✔ Encapsulation
+* ✔ Constructors
+* ✔ Inheritance
+* ✔ Abstract Class
+* ✔ Abstract Method
+* ✔ Method Overriding
+* ✔ Runtime Polymorphism
+* ✔ Arrays of Objects
+* ✔ Collections (`HashSet`)
+* ✔ Loops
+* ✔ User Input
+* ✔ Searching Objects
+* ✔ Calling overridden methods through a superclass reference
+
+This assignment is appropriate for learners who have just completed the fundamentals of OOP and collections, and it naturally exercises multiple concepts in a single, cohesive program.
