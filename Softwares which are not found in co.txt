@@ -1,0 +1,17 @@
+Softwares which are not found in company portal:
+
+Spring tool suite 5.2.0
+	https://spring.io/tools#eclipse
+
+Postman
+	
+PostgreSQL 17
+
+Git
+	Installed through company portal. But needs advice if they have to use
+		GitHub or GitLab and how to signup.
+
+Splunk
+
+Copilot
+	They have access to copilot. But needs advice on using GitHub Copilot.
