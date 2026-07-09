@@ -1,0 +1,219 @@
+What we have discussed yesterday?
+	OOPS concepts
+	Collections
+	Stream API
+	
+
+Spring framework:
+	is a java framework.
+
+
+Generic services			(Container will take care)			Special JVM
+	security
+	persistence		transaction management
+	life cycle management			create, passivate, activate, destroy
+	Scalability
+
+
+Application specific services		(Bean developer should take care)
+
+
+getBean()
+
+
+Application
+		main method		(console application)
+		UI		View			Frontend		app side
+		
+Service
+		UI is missing
+Component
+		is a re-usable piece of code that can be plugged into a service or application
+		if you create a component in java language, then is called as "Bean"
+
+
+configuration
+	xml configuration
+	annotation configuration
+	properties file 
+
+
+Spring Boot
+	guarantees zero xml configuration
+	application.properties
+	convention over configuration
+	inbuilt tomcat server
+
+
+first program in spring boot:
+
+https://start.spring.io/
+
+--------------------------------
+We will understand
+	Model
+	View
+	Controller
+
+
+Model
+	any code that
+		defines data
+		access data
+
+View
+	any code that
+		gets input
+		gives output
+
+
+Controller
+	
+
+
+
+
+
+
+Steps for spring boot MVC:
+1) generate a spring boot app
+	maven
+	war
+	java 21
+	
+
+	spring web
+
+
+2) in pom.xml
+	add the following:
+
+<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+3) in application.properties:
+
+server.port=8080
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+4) create that folder
+	src/main/webapp
+			/WEB-INF/views
+
+
+
+5) create your jsp files in "views" folder only
+
+6) create a controller
+
+
+package com.canadalife.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+	@GetMapping
+	public String home() {
+		return "index";
+	}
+}
+
+
+
+
+
+
+-----------------
+CRUD	-	Create	Read 	Update	Delete
+
+Spring boot
+
+Employee
+	id
+	name
+	department
+	salary
+
+dependencies:
+	spring web
+	h2		file system
+	spring data jpa
+
+
+
+
+
+
+spring.application.name=hr-demo
+
+server.port=5000
+
+# ==========================
+# H2 Database Configuration
+# ==========================
+#spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.url=jdbc:h2:file:./data/employeedb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+# ==========================
+# JPA / Hibernate
+# ==========================
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+
+# Show SQL in console
+spring.jpa.show-sql=true
+#spring.jpa.properties.hibernate.format_sql=true
+
+# ==========================
+# H2 Console
+# ==========================
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# ==========================
+# Server
+# ==========================
+
+# ==========================
+# Logging (Optional)
+# ==========================
+logging.level.org.springframework.web=INFO
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.orm.jdbc.bind=TRACE
+
+
+
+POST		adding
+GET		read
+PUT		update
+DELETE		delete
+PATCH		partial update
+HEAD
+OPTIONS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+recorded demo in:
+
+https://youtu.be/hXvNsYaDSGw

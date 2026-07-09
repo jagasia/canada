@@ -293,3 +293,37 @@ public class App {
 
 
 
+
+
+Day Checklist – Java Refresher (OOP & Collections)
+OOP
+☐ Created Java classes and objects.
+☐ Used constructors to initialize objects.
+☐ Accessed object properties using getters and setters.
+☐ Implemented and used the toString() method.
+☐ Created an ArrayList of custom objects (Employee).
+☐ Added objects to an ArrayList.
+☐ Retrieved objects from an ArrayList.
+☐ Updated object details.
+☐ Removed objects from an ArrayList.
+Collections
+☐ Used ArrayList methods (add, get, set, remove, size, contains).
+☐ Traversed an ArrayList using a for loop.
+☐ Traversed an ArrayList using an enhanced for loop.
+☐ Searched for an employee by ID.
+☐ Displayed employees belonging to a specific department.
+☐ Found the employee with the highest salary.
+☐ Found the employee with the lowest salary.
+☐ Calculated the average salary of all employees.
+☐ Counted the number of employees in each department.
+Problem Solving
+☐ Wrote reusable methods.
+☐ Worked with object references.
+☐ Applied conditional statements (if, switch) where appropriate.
+☐ Applied loops effectively (for, enhanced for).
+☐ Debugged and fixed compilation/runtime errors.
+Code Quality
+☐ Used meaningful variable and method names.
+☐ Followed proper indentation and formatting.
+☐ Avoided unnecessary duplicate code.
+☐ Successfully executed all hands-on programs.
