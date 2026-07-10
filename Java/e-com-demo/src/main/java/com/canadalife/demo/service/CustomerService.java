@@ -1,5 +1,7 @@
 package com.canadalife.demo.service;
 
+import com.canadalife.demo.controller.ProductController;
+import com.canadalife.demo.repository.ProductRepository;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,8 +14,15 @@ import com.canadalife.demo.repository.CustomerRepository;
 @Service
 public class CustomerService {
 
-    @Autowired
+    private final ProductRepository productRepository;
+	private final ProductController productController;
+	@Autowired
     private CustomerRepository customerRepository;
+
+	CustomerService(ProductController productController, ProductRepository productRepository) {
+		this.productController = productController;
+		this.productRepository = productRepository;
+	}
 
     // Create
     public Customer create(Customer customer) {
@@ -48,5 +57,13 @@ public class CustomerService {
     // Delete
     public void delete(Long id) {
         customerRepository.deleteById(id);
+    }
+    
+    public List<Customer> findCustomersByName(String name) {
+    	return customerRepository.findByName(name);
+    }
+    
+    public List<Customer> findCustomersByPhone(String phone) {
+    	return customerRepository.findByPhone(phone);
     }
 }

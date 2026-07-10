@@ -72,6 +72,21 @@ SWAGGER UI
 
 
 http://localhost:8080/swagger-ui/index.html
+ 
+
+
+You know SQL language.
+
+now that we are not writing any sql statements, but able to achieve simple CRUD operations.
+For advanced operations, we have to write sql statements
+
+Easiest way to find by any property other than primary key
+
+	findById		find by primary key
+	findBy<Property>	ex:		findByName			findByEmail
+
+		these finder methods can be implemented easily in the repository.
+
 
 
 
