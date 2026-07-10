@@ -160,3 +160,153 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 
 
+
+
+
+
+
+"Java refresher: OOP, Collections, Streams
+Spring Boot project structure & annotations
+REST controllers & request/response mapping
+Lab: Hello API"
+"CRUD, Versioning, Error handling
+JPA/Hibernate
+Entities & Relationships
+Repository pattern
+Lab: CRUD with DB"
+"Transactions
+Lazy vs Eager
+Caching
+Lab: SQL Integration"
+
+
+
+
+
+
+
+
+
+----------------------------------------Spring security
+Authentication
+	 to verify if the entered credentials are correct or not?
+Authorization
+	to verify if the user has permission to access the resource or not?
+
+
+
+User
+UserDetails
+UserDetailsService
+	encapsulations the user's details		UserDetails
+
+
+Demo1:
+
+	we will just add the spring boot starter security and see the impact.
+
+
+
+
+we observed that, SecurityAutoConfiguration has configured one user
+	username: 	user
+	password:	67e30304-4f40-46bf-9253-99f47156938d			(found in console)
+
+
+Demo 2:
+
+we do not want that default credentials.
+
+we will configure them by ourselves
+
+
+in application.properties:
+
+
+spring.security.user.name=bhuvan
+spring.security.user.password=reza
+spring.security.role=ADMIN
+
+
+
+Demo 3:
+
+we will configure now in java code.
+
+create a class and annotate it with @Configuration
+
+
+package com.canadalife.demo.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+@Configuration
+public class MySecurityConfiguration {
+
+	@Bean
+	public InMemoryUserDetailsManager userDetailsService() {
+		UserDetails u1=User.withUsername("anup")
+				.password("{noop}anup@123")
+				.authorities("ADMIN","USER")
+				.build();
+		
+		UserDetails u2=User.withUsername("bhuvan")
+				.password("{noop}bhuvan@123")
+				.authorities("USER")
+				.build();
+		
+		UserDetails u3=User.withUsername("reza")
+				.password("{noop}reza@123")
+				.authorities("ADMIN")
+				.build();
+		
+		return new InMemoryUserDetailsManager(u1, u2, u3);
+		
+	}
+	
+}
+
+
+
+
+
+
+
+Demo 4:
+i removed the configuration class itself.
+
+package com.canadalife.demo.service;
+
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyUserDetailsService implements UserDetailsService {
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserDetails u1=User.withUsername("anup")
+				.password("{noop}anup@123")
+				.authorities("ADMIN","USER")
+				.build();
+
+		
+		return u1;
+	}
+
+	
+}
+
+
+
+
+
+
+
