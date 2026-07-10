@@ -89,8 +89,73 @@ Easiest way to find by any property other than primary key
 
 
 
+-----------------------------
+
+JPAQL
+-----
+
+if we know
+	JOINS
+	subqueries
+	GROUP BY
+	ORDER BY
 
 
+These things,
+then you would definitely want to know how to use these in our JPA programs
+
+
+
+how will you do group by:
+	we can use stream api
+		but, in this case, we retrieve all data from the database, keep it in a collection and then do stream on the collection.
+
+
+but if we use JPAQL,
+	we are not retrieving all data, but retrieve only the grouped result.
+
+DEMO:
+We already have everything for CRUD on employees.
+
+we now need to provide users, endpoints to find the Amount spent for salary for a particular department.
+
+
+package com.upskillit.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.upskillit.demo.entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	@Query("select sum(e.salary) from Employee e where e.department=:department")
+	Double findSumOfSalaryByDepartment(@Param("department") String department);
+}
+
+
+
+
+
+
+
+
+
+package com.upskillit.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.upskillit.demo.entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	@Query("select sum(e.salary) from Employee e where e.department=:department")
+	Double findSumOfSalaryByDepartment(@Param("department") String department);
+	
+	@Query(value = "SELECT MIN(E.SALARY) FROM EMPLOYEE E WHERE E.DEPARTMENT=:department", nativeQuery = true)
+	Double findMinSalaryByDept(@Param("") String department);
+}
 
 
 
