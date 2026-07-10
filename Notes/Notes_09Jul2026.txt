@@ -217,3 +217,57 @@ OPTIONS
 recorded demo in:
 
 https://youtu.be/2qhJmcl-O0Y
+
+
+------------------------------------------------
+Entity Relationships
+
+Why this is important?
+	when we create a database, tables, we will define primary key, foreign key etc.
+
+	But, when spring framework creates tables, how it should create such relationship
+
+
+
+There are annotations:
+	@OneToOne
+	@OneToMany
+	@ManyToOne
+	@ManyToMany
+
+
+What is the relationship between 
+	Employee and Department
+
+
+			@ManyToOne
+
+
+class Department{
+
+
+}
+
+@Entity
+class Employee{
+	@Id
+	Integer id;
+	String name;
+	@ManyToOne
+	Department department;
+	Double salary;
+}
+
+
+
+
+
+
+Lombok
+	to generate boilerplate code
+
+	to use Lombok, it is not enough to just add Lombok dependency alone. It must be installed.
+
+
+
+

@@ -1,0 +1,27 @@
+package com.canadalife.demo.model;
+
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+public class Department {
+	@Id
+	private Integer id;
+	private String name;
+	//dept vs employee
+	@OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
+	private List<Employee> employees;
+	
+	
+	public Integer getId() {
+		return this.id;
+	}
+}

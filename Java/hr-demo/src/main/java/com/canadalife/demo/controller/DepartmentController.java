@@ -13,39 +13,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.canadalife.demo.model.Department;
-import com.canadalife.demo.model.Employee;
-import com.canadalife.demo.service.EmployeeService;
+import com.canadalife.demo.service.DepartmentService;
 
 @RestController
-@RequestMapping("/employee")
-public class EmployeeController {
+@RequestMapping("/Department")
+public class DepartmentController {
 	@Autowired
-	private EmployeeService es;
+	private DepartmentService es;
 
 	@PostMapping
-	public Employee addEmployee(@RequestBody Employee employee) {
+	public Department addDepartment(@RequestBody Department department) {
 		
-		return es.create(employee);
+		return es.create(department);
 	}
 	
 	@GetMapping
-	public List<Employee> retrieveAllEmployee() {
+	public List<Department> retrieveAllDepartment() {
 		return es.read();
 	}
 	
 	@GetMapping("/{id}")
-	public Employee findEmployeeById(@PathVariable("id") Integer employeeId) {
-		return es.read(employeeId);
+	public Department findDepartmentById(@PathVariable("id") Integer departmentId) {
+		return es.read(departmentId);
 	}
 	
 	@PutMapping("/{id}")
-	public Employee updateEmployee(@PathVariable Integer id, @RequestBody Employee employee) {
-		return es.update(employee);
+	public Department updateDepartment(@PathVariable Integer id, @RequestBody Department department) {
+		return es.update(department);
 	}
 	
 	
 	@DeleteMapping("/{id}")
-	public void deleteEmployeeById(@PathVariable Integer id) {
+	public void deleteDepartmentById(@PathVariable Integer id) {
 		es.delete(id);
 	}
 	

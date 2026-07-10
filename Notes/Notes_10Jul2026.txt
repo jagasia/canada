@@ -1,0 +1,67 @@
+JSON	
+	JavaScript Object Notation
+
+is now the mostly used format for data interchange or representation.
+	csv, xml are other formats still used.
+
+
+now, our webservice response can not only contain
+	data		(JSON)
+but also can contain
+	status code
+	headers
+
+
+
+
+HTTP methods
+	GET
+	POST
+	PUT
+	PATCH
+	DELETE
+	HEAD
+	OPTIONS
+
+
+yesterday, we created a rest api "hr-demo"
+
+@RestController
+
+
+but in previous demo, we used 
+@Controller
+		was used in MVC project
+
+
+in controller,
+	every web method returns view (or model and view)
+	ex:
+		return "index";				//index is a view
+
+
+in rest controller,
+	every web method returns the model alone.
+	ex:
+		return employee;			//employee is an object of Employee class. 
+
+
+
+
+
+even in a controller method,
+	@ResponseBody annotation to convert the behavior of a method to return the model. ie., content.
+
+
+
+
+@RestController	=	@Controller + @ResponseBody
+
+
+
+
+
+
+
+
+

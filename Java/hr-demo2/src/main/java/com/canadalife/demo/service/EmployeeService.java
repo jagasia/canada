@@ -19,19 +19,8 @@ public class EmployeeService {
 	private DepartmentRepository dr;
 	
 	public Employee create(Employee employee) {
-		Department dept;
-		//add a new employee
-		 dept= employee.getDepartment();
-		 
-		Integer did=dept.getId();
-		Optional<Department> temp = dr.findById(did);
-		Department department=null;
-		if(temp.isPresent())
-		{
-			department=temp.get();
+		
 			return er.save(employee);
-		}
-		return null;
 	}
 	public List<Employee> read() {
 		//retrieve all employees
