@@ -1,0 +1,353 @@
+Day 1 – Java Refresher
+1. OOP
+Definition
+
+Object-Oriented Programming (OOP) is a programming paradigm that models real-world objects using classes and objects.
+
+Example
+Employee e = new Employee();
+e.setName("John");
+Checklist
+□ Create classes
+□ Create objects
+□ Use constructors
+□ Use getters/setters
+□ Override toString()
+□ Understand encapsulation
+□ Understand inheritance
+□ Understand polymorphism
+□ Understand abstraction
+Hands-on
+
+Develop an Employee Management System using an ArrayList.
+
+Operations:
+
+Add Employee
+Display Employees
+Search Employee
+Update Employee
+Delete Employee
+2. Collections
+Definition
+
+Collections provide dynamic data structures for storing and manipulating groups of objects.
+
+Example
+ArrayList<Employee> employees = new ArrayList<>();
+employees.add(employee);
+Checklist
+□ List
+□ ArrayList
+□ Set
+□ HashSet
+□ Map
+□ HashMap
+□ Enhanced for loop
+□ Iterator
+Hands-on
+
+Using an ArrayList<Employee>,
+
+Find highest salary
+Find lowest salary
+Count employees by department
+Display employees in a department
+3. Streams
+Definition
+
+Streams provide a functional way to process collections.
+
+Example
+employees.stream()
+         .filter(e -> e.getSalary() > 50000)
+         .forEach(System.out::println);
+Checklist
+□ stream()
+□ filter()
+□ map()
+□ sorted()
+□ limit()
+□ count()
+□ collect()
+Hands-on
+
+Using Streams,
+
+Display IT employees
+Display employees earning above ₹50,000
+Count employees
+Sort by salary
+Display top 5 highest-paid employees
+Day 2 – Spring Boot Basics
+1. Spring Boot Project Structure
+Definition
+
+Spring Boot organizes an application into packages such as controller, service, repository, entity, and configuration.
+
+Example
+controller
+service
+repository
+entity
+DemoApplication
+Checklist
+□ Maven project
+□ pom.xml
+□ application.properties
+□ Main class
+□ Package structure
+Hands-on
+
+Create a Spring Boot project with
+
+Spring Web
+Spring Data JPA
+H2 Database
+Lombok
+Swagger UI
+2. Spring Boot Annotations
+Definition
+
+Annotations provide metadata to configure Spring components.
+
+Examples
+@SpringBootApplication
+@RestController
+@Service
+@Repository
+@Entity
+@Autowired
+Checklist
+□ @SpringBootApplication
+□ @RestController
+□ @RequestMapping
+□ @Service
+□ @Repository
+□ @Entity
+□ @Autowired
+Hands-on
+
+Create
+
+Employee Entity
+Repository
+Service
+Controller
+3. REST Controllers
+Definition
+
+A REST Controller handles HTTP requests and returns JSON responses.
+
+Example
+@GetMapping("/employees")
+Checklist
+□ GET
+□ POST
+□ PUT
+□ DELETE
+□ PathVariable
+□ RequestBody
+Hands-on
+
+Implement
+
+GET All
+GET By Id
+POST
+PUT
+DELETE
+4. Hello API Lab
+Hands-on
+
+Create
+
+GET /hello
+
+Response
+
+Hello Spring Boot
+Day 3 – CRUD & JPA
+1. CRUD
+Definition
+
+CRUD represents Create, Read, Update and Delete operations.
+
+Checklist
+□ Create
+□ Read
+□ Update
+□ Delete
+Hands-on
+
+Implement CRUD for Product.
+
+2. API Versioning
+Definition
+
+Versioning allows multiple API versions to coexist.
+
+Example
+/api/v1/products
+/api/v2/products
+Checklist
+□ URI Versioning
+□ Benefits
+□ Backward compatibility
+Hands-on
+
+Create
+
+/v1/products
+
+and
+
+/v2/products
+3. Error Handling
+Definition
+
+Error handling returns meaningful HTTP responses when requests fail.
+
+Example
+404 Not Found
+400 Bad Request
+500 Internal Server Error
+Checklist
+□ ResponseEntity
+□ HttpStatus
+□ Exception Handling
+Hands-on
+
+Return
+
+404 for invalid ID
+400 for invalid input
+4. JPA / Hibernate
+Definition
+
+JPA is the specification. Hibernate is its most popular implementation.
+
+Checklist
+□ Entity
+□ Primary Key
+□ Repository
+□ save()
+□ findAll()
+□ findById()
+Hands-on
+
+Persist Product data into H2.
+
+5. Entities & Relationships
+Definition
+
+Relationships connect entities together.
+
+Examples
+OneToOne
+OneToMany
+ManyToOne
+ManyToMany
+Checklist
+□ @OneToOne
+□ @OneToMany
+□ @ManyToOne
+□ @ManyToMany
+Hands-on
+
+Department ↔ Employee
+
+6. Repository Pattern
+Definition
+
+Repositories abstract database operations from business logic.
+
+Example
+public interface EmployeeRepository
+        extends JpaRepository<Employee, Long>
+Checklist
+□ JpaRepository
+□ CRUD methods
+□ Derived queries
+Hands-on
+
+Create
+
+EmployeeRepository
+ProductRepository
+Lab – CRUD with Database
+
+Develop REST APIs for
+
+Employee
+Product
+Customer
+
+using
+
+H2
+Swagger
+Spring Data JPA
+Day 4 – Advanced JPA
+1. Transactions
+Definition
+
+A transaction ensures a group of database operations either all succeed or all fail.
+
+Example
+@Transactional
+Checklist
+□ ACID
+□ Commit
+□ Rollback
+□ @Transactional
+Hands-on
+
+Transfer salary between two employees within one transaction.
+
+2. Lazy vs Eager Loading
+Definition
+
+Lazy loading fetches related data only when needed, while eager loading fetches it immediately.
+
+Example
+@OneToMany(fetch = FetchType.LAZY)
+
+@ManyToOne(fetch = FetchType.EAGER)
+Checklist
+□ LAZY
+□ EAGER
+□ Default fetch types
+□ Performance implications
+Hands-on
+
+Compare SQL generated for lazy and eager relationships.
+
+3. Caching
+Definition
+
+Caching stores frequently accessed data to reduce database queries.
+
+Checklist
+□ First-level cache
+□ Session cache
+□ Benefits
+□ Cache lifecycle
+Hands-on
+
+Retrieve the same entity twice within one transaction and observe that Hibernate executes only one SQL query.
+
+Lab – SQL Integration
+
+Develop a small application that demonstrates:
+
+CRUD operations
+JPQL queries
+Aggregate functions (SUM, AVG, COUNT)
+GROUP BY
+ORDER BY
+Named query methods (findByDepartment, findBySalaryGreaterThan)
+Swagger testing
+H2 Console verification
+
+This progression moves from Java fundamentals to REST APIs, then persistence with JPA, and finally introduces transactional behavior and query optimization concepts through practical labs.
