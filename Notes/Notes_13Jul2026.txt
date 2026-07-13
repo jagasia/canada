@@ -1,312 +1,309 @@
-JSON	
-	JavaScript Object Notation
+So far, what have we discussed in spring security?
 
-is now the mostly used format for data interchange or representation.
-	csv, xml are other formats still used.
-
-
-now, our webservice response can not only contain
-	data		(JSON)
-but also can contain
-	status code
-	headers
+	we observed that, when we add spring security starter dependency in pom.xml in a spring boot project, 
+		a "user" with generated password (found in console)
+	we changed it using configuration:
+		application.properties
+			spring.security.user.name=raja
+			spring.security.user.password=abcd@123
+			spring.security.user.role=ADMIN
 
 
+	we also created a configuration class
+
+------------------------------------------
+Summary:
+
+we are able to configure the spring security such that, it allows logging in using any user found in the h2 database
+
+we have allowed few endpoints
+	/api/v1/**
+
+to access without authentication.		permitAll
+
+any other requests are authenticated.		anyRequest().authenticated();
+
+But how do we login?
+	so far we are using basic auth	ie., forms authentication.
+
+but it is possible that we can provide an endpoint in rest controller post mapping to access credentials from 
+	postman
+	swagger
+	vue js
+
+and if authenticated, we can return a JWT token
+
+why token?
+	After login, when i make other requests to end points, the web service should consider me as a logged in user. So i need a token.
+
+JWT
+	JSON Web Token
+
+it is in json format.
 
 
-HTTP methods
-	GET
-	POST
-	PUT
-	PATCH
-	DELETE
-	HEAD
-	OPTIONS
+{
+	"token":"DS098FSFY09SHF0S9D8HF0S9DHF0S9DFH0SDFHSD0FHDSF0"
+}
 
 
-yesterday, we created a rest api "hr-demo"
+In order to implement JWT in our project:
 
-@RestController
-
-
-but in previous demo, we used 
-@Controller
-		was used in MVC project
-
-
-in controller,
-	every web method returns view (or model and view)
-	ex:
-		return "index";				//index is a view
-
-
-in rest controller,
-	every web method returns the model alone.
-	ex:
-		return employee;			//employee is an object of Employee class. 
-
-
-
-
-
-even in a controller method,
-	@ResponseBody annotation to convert the behavior of a method to return the model. ie., content.
-
-
-
-
-@RestController	=	@Controller + @ResponseBody
-
-
-
-
-SWAGGER UI
-
+1) in pom.xml we need to add the following dependencies:
+<!-- JWT API -->
 <dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-    <version>2.8.10</version>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.12.7</version>
+</dependency>
+
+<!-- JWT Implementation -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.12.7</version>
+    <scope>runtime</scope>
+</dependency>
+
+<!-- JSON Serializer/Deserializer (Jackson) -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.12.7</version>
+    <scope>runtime</scope>
 </dependency>
 
 
 
-
-http://localhost:8080/swagger-ui/index.html
- 
-
-
-You know SQL language.
-
-now that we are not writing any sql statements, but able to achieve simple CRUD operations.
-For advanced operations, we have to write sql statements
-
-Easiest way to find by any property other than primary key
-
-	findById		find by primary key
-	findBy<Property>	ex:		findByName			findByEmail
-
-		these finder methods can be implemented easily in the repository.
-
-
-
------------------------------
-
-JPAQL
------
-
-if we know
-	JOINS
-	subqueries
-	GROUP BY
-	ORDER BY
-
-
-These things,
-then you would definitely want to know how to use these in our JPA programs
-
-
-
-how will you do group by:
-	we can use stream api
-		but, in this case, we retrieve all data from the database, keep it in a collection and then do stream on the collection.
-
-
-but if we use JPAQL,
-	we are not retrieving all data, but retrieve only the grouped result.
-
-DEMO:
-We already have everything for CRUD on employees.
-
-we now need to provide users, endpoints to find the Amount spent for salary for a particular department.
-
-
-package com.upskillit.demo.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
-import com.upskillit.demo.entity.Employee;
-
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-	@Query("select sum(e.salary) from Employee e where e.department=:department")
-	Double findSumOfSalaryByDepartment(@Param("department") String department);
-}
-
-
-
-
-
-
-
-
-
-package com.upskillit.demo.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
-import com.upskillit.demo.entity.Employee;
-
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-	@Query("select sum(e.salary) from Employee e where e.department=:department")
-	Double findSumOfSalaryByDepartment(@Param("department") String department);
-	
-	@Query(value = "SELECT MIN(E.SALARY) FROM EMPLOYEE E WHERE E.DEPARTMENT=:department", nativeQuery = true)
-	Double findMinSalaryByDept(@Param("") String department);
-}
-
-
-
-
-
-
-
-
-
-"Java refresher: OOP, Collections, Streams
-Spring Boot project structure & annotations
-REST controllers & request/response mapping
-Lab: Hello API"
-"CRUD, Versioning, Error handling
-JPA/Hibernate
-Entities & Relationships
-Repository pattern
-Lab: CRUD with DB"
-"Transactions
-Lazy vs Eager
-Caching
-Lab: SQL Integration"
-
-
-
-
-
-
-
-
-
-----------------------------------------Spring security
-Authentication
-	 to verify if the entered credentials are correct or not?
-Authorization
-	to verify if the user has permission to access the resource or not?
-
-
-
-User
-UserDetails
-UserDetailsService
-	encapsulations the user's details		UserDetails
-
-
-Demo1:
-
-	we will just add the spring boot starter security and see the impact.
-
-
-
-
-we observed that, SecurityAutoConfiguration has configured one user
-	username: 	user
-	password:	67e30304-4f40-46bf-9253-99f47156938d			(found in console)
-
-
-Demo 2:
-
-we do not want that default credentials.
-
-we will configure them by ourselves
-
-
-in application.properties:
-
-
-spring.security.user.name=bhuvan
-spring.security.user.password=reza
-spring.security.role=ADMIN
-
-
-
-Demo 3:
-
-we will configure now in java code.
-
-create a class and annotate it with @Configuration
-
-
-package com.canadalife.demo.config;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.User;
+2) Jwt util / Jwt service
+package com.example.demo.service;
+
+import java.security.Key;
+import java.util.Date;
+import java.util.Map;
+import java.util.function.Function;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-
-@Configuration
-public class MySecurityConfiguration {
-
-	@Bean
-	public InMemoryUserDetailsManager userDetailsService() {
-		UserDetails u1=User.withUsername("anup")
-				.password("{noop}anup@123")
-				.authorities("ADMIN","USER")
-				.build();
-		
-		UserDetails u2=User.withUsername("bhuvan")
-				.password("{noop}bhuvan@123")
-				.authorities("USER")
-				.build();
-		
-		UserDetails u3=User.withUsername("reza")
-				.password("{noop}reza@123")
-				.authorities("ADMIN")
-				.build();
-		
-		return new InMemoryUserDetailsManager(u1, u2, u3);
-		
-	}
-	
-}
-
-
-
-
-
-
-
-Demo 4:
-i removed the configuration class itself.
-
-package com.canadalife.demo.service;
-
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+
 @Service
-public class MyUserDetailsService implements UserDetailsService {
+public class JwtService {
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UserDetails u1=User.withUsername("anup")
-				.password("{noop}anup@123")
-				.authorities("ADMIN","USER")
-				.build();
+    @Value("${jwt.secret}")
+    private String secretKey;
 
-		
-		return u1;
-	}
+    @Value("${jwt.expiration}")
+    private long jwtExpiration;
 
-	
+    // Generate JWT
+    public String generateToken(UserDetails userDetails) {
+
+        return Jwts.builder()
+                .subject(userDetails.getUsername())
+                .claims(Map.of())
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + jwtExpiration))
+                .signWith(getSigningKey())
+                .compact();
+    }
+
+    // Extract Username
+    public String extractUsername(String token) {
+
+        return extractClaim(token, Claims::getSubject);
+    }
+
+    // Extract Expiration Date
+    public Date extractExpiration(String token) {
+
+        return extractClaim(token, Claims::getExpiration);
+    }
+
+    // Generic Claim Extractor
+    public <T> T extractClaim(String token,
+                              Function<Claims, T> resolver) {
+
+        Claims claims = extractAllClaims(token);
+
+        return resolver.apply(claims);
+    }
+
+    // Validate Token
+    public boolean isTokenValid(String token,
+                                UserDetails userDetails) {
+
+        String username = extractUsername(token);
+
+        return username.equals(userDetails.getUsername())
+                && !isTokenExpired(token);
+    }
+
+    // Check Expiration
+    private boolean isTokenExpired(String token) {
+
+        return extractExpiration(token)
+                .before(new Date());
+    }
+
+    // Parse all Claims
+    private Claims extractAllClaims(String token) {
+
+        return Jwts.parser()
+                .verifyWith(getSigningKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    }
+
+    // Secret Key
+    private Key getSigningKey() {
+
+        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
+
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+}
+
+
+3) jwt filter:
+
+package com.example.demo.filter;
+
+import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.example.demo.service.JwtService;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private JwtService jwtService;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Override
+    protected void doFilterInternal(
+            @NonNull HttpServletRequest request,
+            @NonNull HttpServletResponse response,
+            @NonNull FilterChain filterChain)
+            throws ServletException, IOException {
+
+        // Read Authorization Header
+        String authHeader = request.getHeader("Authorization");
+
+        // No JWT present
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        // Remove "Bearer "
+        String token = authHeader.substring(7);
+
+        // Extract Username
+        String username = jwtService.extractUsername(token);
+
+        // Authenticate only if not already authenticated
+        if (username != null &&
+                SecurityContextHolder.getContext().getAuthentication() == null) {
+
+            UserDetails userDetails =
+                    userDetailsService.loadUserByUsername(username);
+
+            if (jwtService.isTokenValid(token, userDetails)) {
+
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(
+                                userDetails,
+                                null,
+                                userDetails.getAuthorities());
+
+                authentication.setDetails(
+                        new WebAuthenticationDetailsSource()
+                                .buildDetails(request));
+
+                SecurityContextHolder.getContext()
+                        .setAuthentication(authentication);
+            }
+        }
+
+        filterChain.doFilter(request, response);
+    }
 }
 
 
 
 
+
+4) in our configuration class
+	inside the securityFilterChain,
+
+		we need to add this filter
+
+@Bean
+SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+    http
+
+        .csrf(csrf -> csrf.disable())
+
+        .sessionManagement(session ->
+                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
+        .authorizeHttpRequests(auth -> auth
+
+                .requestMatchers(
+                        "/login",
+                        "/signup",
+                        "/h2-console/**")
+                .permitAll()
+
+                .requestMatchers("/admin/**")
+                .hasAuthority("ADMIN")
+
+                .requestMatchers("/user/**")
+                .hasAuthority("USER")
+
+                .requestMatchers("/common/**")
+                .hasAnyAuthority("USER", "ADMIN")
+
+                .anyRequest()
+                .authenticated())
+
+        .addFilterBefore(
+                jwtAuthenticationFilter,
+                UsernamePasswordAuthenticationFilter.class);
+
+    return http.build();
+}
+
+
+5) in our user controller
+
+we have to define login end point
 
 
 

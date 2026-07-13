@@ -25,4 +25,6 @@ public class MyUserController {
 		user.setAuthorities("");
 		return us.create(user);
 	}
+	
+	
 }
