@@ -1,0 +1,312 @@
+JSON	
+	JavaScript Object Notation
+
+is now the mostly used format for data interchange or representation.
+	csv, xml are other formats still used.
+
+
+now, our webservice response can not only contain
+	data		(JSON)
+but also can contain
+	status code
+	headers
+
+
+
+
+HTTP methods
+	GET
+	POST
+	PUT
+	PATCH
+	DELETE
+	HEAD
+	OPTIONS
+
+
+yesterday, we created a rest api "hr-demo"
+
+@RestController
+
+
+but in previous demo, we used 
+@Controller
+		was used in MVC project
+
+
+in controller,
+	every web method returns view (or model and view)
+	ex:
+		return "index";				//index is a view
+
+
+in rest controller,
+	every web method returns the model alone.
+	ex:
+		return employee;			//employee is an object of Employee class. 
+
+
+
+
+
+even in a controller method,
+	@ResponseBody annotation to convert the behavior of a method to return the model. ie., content.
+
+
+
+
+@RestController	=	@Controller + @ResponseBody
+
+
+
+
+SWAGGER UI
+
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.8.10</version>
+</dependency>
+
+
+
+
+http://localhost:8080/swagger-ui/index.html
+ 
+
+
+You know SQL language.
+
+now that we are not writing any sql statements, but able to achieve simple CRUD operations.
+For advanced operations, we have to write sql statements
+
+Easiest way to find by any property other than primary key
+
+	findById		find by primary key
+	findBy<Property>	ex:		findByName			findByEmail
+
+		these finder methods can be implemented easily in the repository.
+
+
+
+-----------------------------
+
+JPAQL
+-----
+
+if we know
+	JOINS
+	subqueries
+	GROUP BY
+	ORDER BY
+
+
+These things,
+then you would definitely want to know how to use these in our JPA programs
+
+
+
+how will you do group by:
+	we can use stream api
+		but, in this case, we retrieve all data from the database, keep it in a collection and then do stream on the collection.
+
+
+but if we use JPAQL,
+	we are not retrieving all data, but retrieve only the grouped result.
+
+DEMO:
+We already have everything for CRUD on employees.
+
+we now need to provide users, endpoints to find the Amount spent for salary for a particular department.
+
+
+package com.upskillit.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.upskillit.demo.entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	@Query("select sum(e.salary) from Employee e where e.department=:department")
+	Double findSumOfSalaryByDepartment(@Param("department") String department);
+}
+
+
+
+
+
+
+
+
+
+package com.upskillit.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.upskillit.demo.entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	@Query("select sum(e.salary) from Employee e where e.department=:department")
+	Double findSumOfSalaryByDepartment(@Param("department") String department);
+	
+	@Query(value = "SELECT MIN(E.SALARY) FROM EMPLOYEE E WHERE E.DEPARTMENT=:department", nativeQuery = true)
+	Double findMinSalaryByDept(@Param("") String department);
+}
+
+
+
+
+
+
+
+
+
+"Java refresher: OOP, Collections, Streams
+Spring Boot project structure & annotations
+REST controllers & request/response mapping
+Lab: Hello API"
+"CRUD, Versioning, Error handling
+JPA/Hibernate
+Entities & Relationships
+Repository pattern
+Lab: CRUD with DB"
+"Transactions
+Lazy vs Eager
+Caching
+Lab: SQL Integration"
+
+
+
+
+
+
+
+
+
+----------------------------------------Spring security
+Authentication
+	 to verify if the entered credentials are correct or not?
+Authorization
+	to verify if the user has permission to access the resource or not?
+
+
+
+User
+UserDetails
+UserDetailsService
+	encapsulations the user's details		UserDetails
+
+
+Demo1:
+
+	we will just add the spring boot starter security and see the impact.
+
+
+
+
+we observed that, SecurityAutoConfiguration has configured one user
+	username: 	user
+	password:	67e30304-4f40-46bf-9253-99f47156938d			(found in console)
+
+
+Demo 2:
+
+we do not want that default credentials.
+
+we will configure them by ourselves
+
+
+in application.properties:
+
+
+spring.security.user.name=bhuvan
+spring.security.user.password=reza
+spring.security.role=ADMIN
+
+
+
+Demo 3:
+
+we will configure now in java code.
+
+create a class and annotate it with @Configuration
+
+
+package com.canadalife.demo.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+@Configuration
+public class MySecurityConfiguration {
+
+	@Bean
+	public InMemoryUserDetailsManager userDetailsService() {
+		UserDetails u1=User.withUsername("anup")
+				.password("{noop}anup@123")
+				.authorities("ADMIN","USER")
+				.build();
+		
+		UserDetails u2=User.withUsername("bhuvan")
+				.password("{noop}bhuvan@123")
+				.authorities("USER")
+				.build();
+		
+		UserDetails u3=User.withUsername("reza")
+				.password("{noop}reza@123")
+				.authorities("ADMIN")
+				.build();
+		
+		return new InMemoryUserDetailsManager(u1, u2, u3);
+		
+	}
+	
+}
+
+
+
+
+
+
+
+Demo 4:
+i removed the configuration class itself.
+
+package com.canadalife.demo.service;
+
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyUserDetailsService implements UserDetailsService {
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserDetails u1=User.withUsername("anup")
+				.password("{noop}anup@123")
+				.authorities("ADMIN","USER")
+				.build();
+
+		
+		return u1;
+	}
+
+	
+}
+
+
+
+
+
+
+
