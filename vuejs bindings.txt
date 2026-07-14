@@ -1,0 +1,307 @@
+The `v-` attributes are called **Vue directives**. They are special instructions that tell Vue how to manipulate the DOM.
+
+If you're teaching Vue, these are the ones your learners should know first.
+
+| Directive   | Shorthand | Purpose                 | Angular Equivalent           |
+| ----------- | --------- | ----------------------- | ---------------------------- |
+| `v-bind`    | `:`       | Bind an attribute       | `[property]`                 |
+| `v-on`      | `@`       | Event binding           | `(event)`                    |
+| `v-model`   | —         | Two-way binding         | `[(ngModel)]`                |
+| `v-if`      | —         | Conditional rendering   | `*ngIf`                      |
+| `v-else`    | —         | Else block              | `else`                       |
+| `v-else-if` | —         | Else if                 | `else if`                    |
+| `v-show`    | —         | Show/hide using CSS     | Similar to `[hidden]`        |
+| `v-for`     | —         | Loop                    | `*ngFor`                     |
+| `v-text`    | —         | Set text content        | Interpolation (`{{ }}`)      |
+| `v-html`    | —         | Render HTML             | `[innerHTML]`                |
+| `v-cloak`   | —         | Hide until Vue is ready | No common Angular equivalent |
+| `v-once`    | —         | Render only once        | No common equivalent         |
+| `v-pre`     | —         | Skip Vue compilation    | No common equivalent         |
+
+---
+
+# 1. `v-bind`
+
+Bind an HTML attribute.
+
+```vue
+<img v-bind:src="imageUrl">
+```
+
+Shorthand:
+
+```vue
+<img :src="imageUrl">
+```
+
+```js
+const imageUrl = ref("logo.png")
+```
+
+Angular:
+
+```html
+<img [src]="imageUrl">
+```
+
+---
+
+# 2. `v-on`
+
+Attach an event.
+
+```vue
+<button v-on:click="save">
+```
+
+Shorthand:
+
+```vue
+<button @click="save">
+```
+
+Angular:
+
+```html
+<button (click)="save()">
+```
+
+---
+
+# 3. `v-model`
+
+Two-way binding.
+
+```vue
+<input v-model="username">
+```
+
+Angular:
+
+```html
+<input [(ngModel)]="username">
+```
+
+---
+
+# 4. `v-if`
+
+Conditional rendering.
+
+```vue
+<p v-if="loggedIn">
+    Welcome
+</p>
+```
+
+Angular:
+
+```html
+<p *ngIf="loggedIn">
+```
+
+---
+
+# 5. `v-else`
+
+```vue
+<p v-if="loggedIn">
+    Welcome
+</p>
+
+<p v-else>
+    Please Login
+</p>
+```
+
+---
+
+# 6. `v-show`
+
+```vue
+<p v-show="loggedIn">
+    Welcome
+</p>
+```
+
+Difference:
+
+`v-if`
+
+```text
+false
+```
+
+The element **doesn't exist** in the DOM.
+
+`v-show`
+
+```text
+false
+```
+
+The element exists but gets:
+
+```css
+display: none;
+```
+
+Use `v-show` if visibility changes frequently.
+
+---
+
+# 7. `v-for`
+
+Loop.
+
+```vue
+<ul>
+    <li v-for="name in names">
+        {{ name }}
+    </li>
+</ul>
+```
+
+```js
+const names = ref([
+    "John",
+    "Mary",
+    "David"
+])
+```
+
+Angular:
+
+```html
+<li *ngFor="let name of names">
+```
+
+---
+
+# 8. `v-text`
+
+Instead of
+
+```vue
+<p>{{ message }}</p>
+```
+
+you can write
+
+```vue
+<p v-text="message"></p>
+```
+
+Rarely used.
+
+---
+
+# 9. `v-html`
+
+```vue
+<div v-html="html"></div>
+```
+
+```js
+const html = ref("<b>Hello</b>")
+```
+
+Output
+
+```html
+Hello
+```
+
+in bold.
+
+Be careful with untrusted user input because it can introduce XSS vulnerabilities.
+
+---
+
+# 10. `v-once`
+
+Render only once.
+
+```vue
+<h1 v-once>{{ version }}</h1>
+```
+
+Even if `version` changes, the UI won't update.
+
+---
+
+# 11. `v-pre`
+
+```vue
+<div v-pre>
+    {{ message }}
+</div>
+```
+
+Output:
+
+```text
+{{ message }}
+```
+
+Vue ignores it.
+
+Useful for documentation.
+
+---
+
+# Real Example
+
+```vue
+<script setup>
+import { ref } from 'vue'
+
+const username = ref("")
+const loggedIn = ref(false)
+
+const users = ref([
+    "John",
+    "Mary",
+    "David"
+])
+
+function login() {
+    loggedIn.value = true
+}
+</script>
+
+<template>
+
+<input
+    v-model="username"
+    :placeholder="'Enter username'"
+>
+
+<button @click="login">
+    Login
+</button>
+
+<p v-if="loggedIn">
+    Welcome {{ username }}
+</p>
+
+<ul>
+    <li v-for="user in users" :key="user">
+        {{ user }}
+    </li>
+</ul>
+
+</template>
+```
+
+---
+
+## The 80/20 Rule
+
+In day-to-day Vue development, you'll use these six directives most of the time:
+
+* `v-model` → Forms
+* `v-bind` (`:`) → Bind attributes
+* `v-on` (`@`) → Handle events
+* `v-if` / `v-else` → Conditional rendering
+* `v-for` → Loops

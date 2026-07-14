@@ -1,0 +1,331 @@
+How to use swagger and provide headers?
+
+Step 1:
+add a configuration class to the project.
+
+package com.canadalife.demo.config;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@OpenAPIDefinition(
+    info = @Info(
+        title = "Demo API",
+        version = "1.0"
+    )
+)
+@SecurityScheme(
+    name = "Bearer Authentication",
+    type = SecuritySchemeType.HTTP,
+    scheme = "bearer",
+    bearerFormat = "JWT"
+)
+public class OpenApiConfig {
+}
+
+
+Step 2:
+package com.canadalife.demo.controller;
+
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
+@RestController
+@RequestMapping("/api/v2/product")
+@SecurityRequirement(name = "Bearer Authentication")
+public class ProductController {
+
+	
+	@PostMapping
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public String addProducgt() {
+		return "Product is added";
+	}
+	
+	@PutMapping
+	public String updateProduct() {
+		return "Updated the product";
+	}
+	
+	@GetMapping
+	@PreAuthorize("hasAnyAuthority('USER','ADMIN')")
+	public String getAllProducts() {
+		return "All products are listed now";
+	}
+	
+	@DeleteMapping
+	public String deleteProduct() {
+		return "Deleting the product";
+	}
+	
+}
+
+
+
+
+
+--------------------------------------------------
+::
+
+
+interface Person{
+	void speak();
+}
+
+
+class Employee implements Person{
+	public void speak(){
+		System.out.println("Employee speaks");
+	}
+}
+
+
+
+public class App{
+
+	public static void main(String []args){
+		//i want to call the speak method. How?
+
+		Person raja=new Employee();
+		raja.speak();
+	}
+}
+
+
+
+----------------------
+the above was traditional approach.
+
+lambda approach?
+
+
+interface Person{
+	void speak();
+}
+
+public class App{
+
+	public static void main(String []args){
+		Person raja=()->{
+			System.out.println();
+		}
+
+		raja.speak();
+	}
+}
+
+
+-------------------------------------------
+the above was using lambda.
+
+
+
+when i use lambda, i am providing the code.
+But what if some other class already have suitable code, but does not implement Person interface. And may not named as "speak" method.
+
+ex:
+
+
+interface Person{
+	void speak();
+}
+
+
+class Student{			//this class does not implement Person interface
+	public void talk(){		//see this method name is not "speak"
+		System.out.println("This student is speaking");
+	}
+}
+
+
+public class App{
+
+	public static void main(String []args){
+		Person raja=new Student()::talk;
+		raja.speak();
+	}
+}
+
+
+---------------------------
+the above is an example for method reference.
+
+
+now, lets slightly modify the method as static.
+
+interface Person{
+	void speak();
+}
+
+
+class Student{			//this class does not implement Person interface
+	public static void talk(){		//see this method name is not "speak"
+		System.out.println("This student is speaking");
+	}
+}
+
+
+public class App{
+
+	public static void main(String []args){
+		Person raja=Student::talk;			//static method reference. because, talk is static, and ref by class not object
+		raja.speak();
+	}
+}
+
+
+
+
+
+
+MCQ			10
+Subjective		3
+
+---------------------------------------------
+
+vuejs
+-----
+ is a javascript framework
+ frontend
+
+we know 
+	html
+	css
+	js
+
+we will use these knowledge in vuejs.
+
+
+
+what we need in our laptop?
+
+	nodejs
+
+cmd:
+	node -v
+
+
+
+in spring boot (maven), there is a pom.xml in which we specify all related to the project
+	dependencies
+	java version
+		source version
+		target version
+	plugins 
+	targer
+		jar
+		war
+		ear
+
+	versions
+
+
+
+the same way, in a vuejs application:
+	package.json
+
+
+
+
+in spring boot, there is a
+	.m2 folder in your 	c:\users\rjaga path.
+
+
+this .m2\repository is the local repository of all maven dependencies 		(jar files).
+
+the same way, in vuejs application
+	node_modules folder
+
+
+
+
+
+------------------
+npm init
+	creates package.json
+
+
+
+
+npm install
+	creates node_modules folder and adds all libraries mentioned in the package.json
+
+
+SPA
+	Single Page Application
+
+
+---------------------------------------------------------
+Demo:
+
+Props and State
+----------------
+props
+	give input from parent to child
+
+
+	<font color="red"><p> This is a sentence <p> </font>
+
+
+
+	<p style="color:red">This is also correct</p>
+
+
+
+
+
+	font is an element
+	color is an attribute
+
+
+
+
+	<Login color="blue" title="Admin Login page" />
+
+	<Login color="red" title="User Login page" />
+
+
+
+
+
+	borderColor				not border-color
+
+
+
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    required: true
+  }
+})
+</script>
+
+<template>
+     <h3>
+        {{ title }}
+     </h3>
+     Username: <input type="text" value="" /><br/>
+     Password: <input type="password" value="" /><br/>
+     <input type="Button" value="Login" />
+</template>
+
+
+
+
+
+next:
+v-model
+
