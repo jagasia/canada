@@ -329,3 +329,71 @@ defineProps({
 next:
 v-model
 
+
+v-model
+-----------------------
+
+
+
+	{{title}}		
+		{{2*5}}
+
+
+
+
+
+
+we have used v-model
+
+now, similar to v-model, what are the others?
+
+v for vue
+
+
+
+---------------------------------
+
+	Routing
+
+
+
+components
+	One.vue
+	Two.vue
+	Three.vue
+
+
+views
+	Login.vue
+	Signup.vue
+
+
+
+
+
+
+steps for routing:
+	install router
+	create components
+	create views
+	create routes
+	register route in main.js
+	place a router outlet in App component		<RouterView /> 
+	create a navbar
+
+
+
+
+
+
+
+
+
+
+
+Spring boot Restful webservice
+	pathvariable vs request param vs request body
+	different annotations used for entity relationships
+	JPAQL, finder methods
+	Java Collections
+	Spring boot security password encoders, permitAll, authenticated, JWT
