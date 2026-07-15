@@ -1,0 +1,108 @@
+--------------------------------------------------
+::
+
+
+interface Person{
+	void speak();
+}
+
+
+class Employee implements Person{
+	public void speak(){
+		System.out.println("Employee speaks");
+	}
+}
+
+
+
+public class App{
+
+	public static void main(String []args){
+		//i want to call the speak method. How?
+
+		Person raja=new Employee();
+		raja.speak();
+	}
+}
+
+
+
+----------------------
+the above was traditional approach.
+
+lambda approach?
+
+
+interface Person{
+	void speak();
+}
+
+public class App{
+
+	public static void main(String []args){
+		Person raja=()->{
+			System.out.println();
+		}
+
+		raja.speak();
+	}
+}
+
+
+-------------------------------------------
+the above was using lambda.
+
+
+
+when i use lambda, i am providing the code.
+But what if some other class already have suitable code, but does not implement Person interface. And may not named as "speak" method.
+
+ex:
+
+
+interface Person{
+	void speak();
+}
+
+
+class Student{			//this class does not implement Person interface
+	public void talk(){		//see this method name is not "speak"
+		System.out.println("This student is speaking");
+	}
+}
+
+
+public class App{
+
+	public static void main(String []args){
+		Person raja=new Student()::talk;
+		raja.speak();
+	}
+}
+
+
+---------------------------
+the above is an example for method reference.
+
+
+now, lets slightly modify the method as static.
+
+interface Person{
+	void speak();
+}
+
+
+class Student{			//this class does not implement Person interface
+	public static void talk(){		//see this method name is not "speak"
+		System.out.println("This student is speaking");
+	}
+}
+
+
+public class App{
+
+	public static void main(String []args){
+		Person raja=Student::talk;			//static method reference. because, talk is static, and ref by class not object
+		raja.speak();
+	}
+}

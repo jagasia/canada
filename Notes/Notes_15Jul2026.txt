@@ -1,0 +1,12 @@
+How can we access restful webservices from our vuejs app?
+	fetch api	(js)
+	axios
+
+
+axios is a library that we need to install
+
+	npm i axios
+
+we have to run this command in a location where package.json is present
+
+
