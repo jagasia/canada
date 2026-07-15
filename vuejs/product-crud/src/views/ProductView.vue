@@ -5,9 +5,9 @@ import { onMounted, ref } from 'vue';
 let product = ref({})
 let products = ref([]);
 
-onMounted(() => {
-    console.log("Product View component is mounted now");
-    //call api and get all products then populate the products in the products array
+
+function loadProducts(){
+     //call api and get all products then populate the products in the products array
    const ps = new ProductService();
    ps.retrieveAllProducts()
    .then(res=>{
@@ -16,8 +16,15 @@ onMounted(() => {
     console.log(products.value);
     
    })
-   .catch()
+   .catch(err=>{
+    console.log("Error accessing the products. Reason: "+err);
+    
+   })
+}
 
+onMounted(() => {
+    console.log("Product View component is mounted now");
+   loadProducts();
 });
 
 function addProduct() {
@@ -28,7 +35,7 @@ function addProduct() {
         .then(res => {
             console.log("Response from web service:");
             console.log(res);
-
+            loadProducts();
         })
         .catch(err => {
             console.log("Error while adding");

@@ -10,3 +10,50 @@ axios is a library that we need to install
 we have to run this command in a location where package.json is present
 
 
+----------------------
+we will have spring security jwt also.
+
+
+so far, we have done 2 different projects
+	spring security jwt
+
+	product crud
+
+
+
+in my db table
+USER_MASTER
+	1	Raja	ROLE_ADMIN
+
+
+	User.withUsername("raja")
+	.password("sdfsdf90sdf8sd09f8sd90f8ds90f")
+	.roles("ADMIN","USER")
+	.build();
+
+
+	User.withUsername("raja")
+	.password("sdfsdf90sdf8sd09f8sd90f8ds90f")
+	.authorities("ADMIN","USER")
+	.build();
+
+
+
+
+	@PreAuthorize("hasAuthority('ADMIN')")
+
+
+
+
+
+
+
+	@PreAuthorize("hasRole('ADMIN')")
+
+
+
+
+
+
+
+
