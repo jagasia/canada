@@ -1,87 +1,144 @@
 <script setup>
+import { onMounted, ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { isLoggedIn, updateLoginStatus } from './services/AuthService';
+
+// var isLoggedIn=false;
+function logout() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
+  localStorage.removeItem("roles");
+}
+
+onMounted(()=>{
+  //check if user logged in or not
+  updateLoginStatus();
+})
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <header class="header">
+      <div class="title">
+        Product Management System
+      </div>
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/product">Product Page</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-      </nav>
-    </div>
-  </header>
 
-  <RouterView />
+        <RouterLink to="/">Home</RouterLink>
+
+        <RouterLink to="/product">
+          Products
+        </RouterLink>
+
+        <RouterLink :to="isLoggedIn?'/logout':'/login'">
+          <p v-if="!isLoggedIn">Login</p>
+          <p v-if="isLoggedIn">Logout</p>
+        </RouterLink>
+
+        <RouterLink to="/signup">
+          Signup
+        </RouterLink>
+
+        
+
+      </nav>
+
+    </header>
+<main class="content">
+
+    <div></div>
+
+    <div class="center">
+        <RouterView />
+    </div>
+
+    <div></div>
+
+</main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+
+*{
+  box-sizing:border-box;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+body{
+  margin:0;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.header{
+
+  background:#2c3e50;
+  color:white;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:15px 30px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.title{
+
+  font-size:24px;
+  font-weight:bold;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+nav{
+
+  display:flex;
+  gap:15px;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+nav a{
+
+  color:white;
+  text-decoration:none;
+
+  padding:8px 14px;
+
+  border-radius:5px;
+
+  transition:0.3s;
 }
 
-nav a:first-of-type {
-  border: 0;
+nav a:hover{
+
+  background:#42b883;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.router-link-exact-active{
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+  background:#42b883;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.content {
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+    display: grid;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+    grid-template-columns: 2fr 6fr 2fr;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+    width: 100%;
+}
+
+.center {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+
+    min-height: 600px;
 }
 </style>

@@ -1,7 +1,10 @@
 <script setup>
-    import { UserService } from '@/services/UserService';
+    import { updateLoginStatus } from '@/services/AuthService';
+import { UserService } from '@/services/UserService';
 import {ref} from 'vue'
+import { useRouter } from 'vue-router';
     let authRequest=ref({})
+    let router=useRouter();
 
     function login(){
         const us=new UserService();
@@ -13,8 +16,17 @@ import {ref} from 'vue'
             localStorage.setItem("token",token);
             console.log("LocalStorage token item is now created");
             
-            
-            //redirect to home page.
+            updateLoginStatus();
+            //redirect to home page. based on role.
+            const roles=res.data.roles.split(",");
+            if(roles.includes('ADMIN')){
+                router.push("/admin/home");
+            }else if(roles.includes('USER')){
+                router.push("/user/home");
+            }else{
+                throw new Error("No valid roles found")
+            }
+
         })
         .catch(err=>console.log(err)
         )
