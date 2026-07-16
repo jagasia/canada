@@ -1,0 +1,39 @@
+Java refresher: OOP, Collections, Streams
+Spring Boot project structure & annotations
+REST controllers & request/response mapping
+Lab: Hello API
+CRUD, Versioning, Error handling
+JPA/Hibernate
+Entities & Relationships
+Repository pattern
+Lab: CRUD with DB
+Transactions
+Lazy vs Eager
+Caching
+Lab: SQL Integration
+JWT
+OAuth2
+RBAC
+Lab: Secure CRUD API
+Vite setup
+SFC
+Directives
+Props & Events
+Lab
+ref/reactive/computed/watch
+Lifecycle
+Forms
+Vue Router
+Lab
+Pinia
+Slots
+Transitions
+Composition API
+Vue Test Utils
+Vitest
+Lab
+----------------------------------------
+in vuejs, we are going to disucss about the 
+	difference between Options API and Composition APi
+
+
