@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
 import { isLoggedIn, updateLoginStatus } from './services/AuthService';
+import LoginView from './views/LoginView.vue';
 
 // var isLoggedIn=false;
 function logout() {
@@ -17,6 +18,9 @@ onMounted(()=>{
 </script>
 
 <template>
+  <LoginView>
+    This is typed by jag between start and end tag of login view.
+  </LoginView>
   <div>
 
     <header class="header">

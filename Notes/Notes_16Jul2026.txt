@@ -36,4 +36,56 @@ Lab
 in vuejs, we are going to disucss about the 
 	difference between Options API and Composition APi
 
+--------------------
+Slot in vuejs
+
+
+
+in App.vue
+
+
+	<Login />
+
+
+
+
+why not
+	<Login>
+
+	This is a content
+	</Login>
+
+
+
+Props vs Slot
+--------------
+
+	<LoginView :title="x">
+		this is content for slot
+	</LoginView>
+
+
+
+
+	<a href="india.com">
+
+	<script setup>
+		const x=ref('google.com');
+		var id=reg(20);
+	</script>
+
+
+	<template>
+		<a :href="`/api/v1/products/${id}`"> Click here</a>
+	</template>
+
+Activity:
+---------
+
+Composition API 		vs Options API
+Slots
+Pinia
+
+
+
 

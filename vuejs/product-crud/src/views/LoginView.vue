@@ -36,6 +36,9 @@ import { useRouter } from 'vue-router';
 
 
 <template>
+    <slot>
+        
+    </slot>
     <div>
        
         <br>
