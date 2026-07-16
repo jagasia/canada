@@ -29,11 +29,11 @@ async function submitLogin() {
   <div class="card form-card">
     <h2>Login</h2>
     <form @submit.prevent="submitLogin">
-      <label>Username</label>
-      <input v-model="form.username" required />
+      <label for="username">Username</label>
+      <input id="username" v-model="form.username" required />
 
-      <label>Password</label>
-      <input v-model="form.password" type="password" required />
+      <label for="password">Password</label>
+      <input id="password" v-model="form.password" type="password" required />
 
       <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       <button type="submit" :disabled="loading">{{ loading ? 'Logging in...' : 'Login' }}</button>

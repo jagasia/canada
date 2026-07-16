@@ -63,7 +63,9 @@ onMounted(loadProducts)
 
 <template>
   <div class="card">
-    <h2>Admin Products</h2>
+    <Transition name="fade" appear>
+            <h2>Admin Products</h2>
+    </Transition>
     <p class="subtle">Create, edit, and remove products.</p>
 
     <form @submit.prevent="saveProduct" class="product-form">
@@ -74,10 +76,12 @@ onMounted(loadProducts)
       <button type="button" class="secondary" @click="resetForm">Clear</button>
     </form>
 
+
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
 
     <div v-if="loading">Loading products...</div>
-    <table v-else>
+    
+            <table v-else>
       <thead>
         <tr>
           <th>Name</th>
@@ -99,4 +103,17 @@ onMounted(loadProducts)
       </tbody>
     </table>
   </div>
+    
+
 </template>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 10s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

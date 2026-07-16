@@ -89,3 +89,54 @@ Pinia
 
 
 
+vue.js Transitions
+
+<Transition>
+</Transition>
+
+
+
+ViTest 
+for testing our components
+
+npm i -D 
+
+
+-D is a short cut for devDependencies
+------------------------------------
+Typescript
+----------
+typescript is compiler based language
+
+	command to compile as ts file?
+
+		tsc filename.ts
+
+
+
+
+
+
+let firstName:string="John Doe";
+firstName="100";
+
+
+let x:number=<number><any>firstName;
+
+var arr1=[1,2,3];
+var arr2=[4,5,6];
+var arr3=[...arr1, ...arr2];		//what is inside arr3?
+		here, ... is spread operator.
+
+
+
+var emp={"id":1,"name":"Raja"};
+
+var {id, name}=emp;
+
+id has 1
+name has Raja
+
+https://github.com/jagasia/harman1/blob/4b69fca3e711f322f8e9a75c704de721473face2/Notes/Typescript_Notes.txt
+
+
