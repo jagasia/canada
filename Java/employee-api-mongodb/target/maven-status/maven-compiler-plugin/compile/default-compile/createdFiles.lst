@@ -1,0 +1,5 @@
+com\canadalife\demo\document\Employee.class
+com\canadalife\demo\controller\EmployeeController.class
+com\canadalife\demo\service\EmployeeService.class
+com\canadalife\demo\EmployeeApiMongodbApplication.class
+com\canadalife\demo\repository\EmployeeRepository.class

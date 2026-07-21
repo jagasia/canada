@@ -168,4 +168,18 @@ END;
 
 SELECT EMPLOYEE_ID,SALARY, FNBONUS(EMPLOYEE_ID) BONUS FROM EMPLOYEES;
 
+-------------------------
+Relational data is in row - column format.
+
+No SQL data is basically in JSON format.
+	this is hierarchical
+
+{
+	"employees":[
+		{},{},{}
+	]
+}
+--------------------------
+Now, our spring boot webservice will not use Oracle db, but Mongodb
+
 

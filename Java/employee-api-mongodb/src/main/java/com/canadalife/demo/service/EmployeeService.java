@@ -1,0 +1,3 @@
+
+package com.canadalife.demo.service; import java.util.*; import org.springframework.stereotype.Service; import lombok.RequiredArgsConstructor; import com.canadalife.demo.document.Employee; import com.canadalife.demo.repository.EmployeeRepository;
+@Service @RequiredArgsConstructor public class EmployeeService{private final EmployeeRepository r; public Employee create(Employee e){return r.save(e);} public List<Employee> read(){return r.findAll();} public Optional<Employee> read(String id){return r.findById(id);} public Employee update(Employee e){return r.save(e);} public void delete(String id){r.deleteById(id);}}
