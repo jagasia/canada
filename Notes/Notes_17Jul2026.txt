@@ -1,0 +1,90 @@
+GIT
+---
+lab setup:
+	install git for windows 
+		git -v
+
+	
+What is git?
+	to share code among developers and also used to give commands in terminal to push code.
+	
+
+first things first.
+	git config --global user.name "jagasia"
+	git config --global user.email "rjagadeeswaran@yahoo.com"
+when we push for the first time, a browser opens to authorize. 
+
+
+we have a folder in our computer. 
+we can consider this as a "local" repository.
+	git init
+		it will create a folder .git
+	git remote add origin <<git url of remote>>
+
+what is a "remote" repository?
+	in any git platform like
+		GitHub.com
+		GitLab.com
+		Bitbucket.com
+
+
+when you create a remote repository, first, it will show you some important commands
+
+	git init
+	git add .
+	git commit -m "first commit"
+	git branch -M main
+	git push -u origin main
+
+
+how can we remove a branch?
+	locally? or remote?
+
+what is the difference between
+	git clone and git pull
+
+first time, ie., when you do not have a local repository. But you have a remote repository.
+
+d:\jag
+
+git clone https://url/stablediffusion.git
+
+d:\jag will now contain a folder "stablediffusion"
+
+d:\jag> cd stablediffusion
+d:\jag\stablediffusion>
+
+
+the clone is done only once.
+
+
+whenever, remote contains changes, you do 
+	git pull
+
+whenever, local contains changes, you do
+	git push
+
+
+git will do a diff check whenever you push:
+	if remote contains something, we do not have locally,
+	then the push will be rejected.
+
+Activity:
+identify the various commands used in git
+and understand them
+
+----------------------------------
+Pending topic from spring boot:	OAuth2
+	Open Authentication
+
+we want to allow users using their account in
+	google
+	facebook
+	GitHub
+etc
+etc
+
+
+first if you want to allow google users, then you should get 
+	
+

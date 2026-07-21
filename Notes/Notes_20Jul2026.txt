@@ -1,0 +1,310 @@
+RDBMS - SQL - PL/SQL
+--------------------
+why RDBMS
+	we want to store structured data, such that, we can do data mining easily.
+	mining means, working on the data to get business intelligence.
+	filtering, sorting, grouping, aggregation, joins, sub queries, transformation, etc.
+
+Normalization:
+--------------
+	is a scientific approach to design the database.
+
+there are normal forms,
+
+we can say that the table design is in progress and currently it is in 
+	1NF
+		if the data in every row, has one data in one cell.
+
+
+every cell must have atomic value:
+	Name			Marks
+	Raja Venkatesh		90
+
+
+	FirstName LastName	Marks
+	Raja	   Venkatesh	90
+
+
+Activity:
+understand normalization, denormalization, and various normal forms:
+1NF		every cell in the table row has precisely only 1 data
+2NF		every attribute(column) is functionally dependent on whole relation, not partial dependent.
+3FN
+BCNF
+
+
+
+
+Attendance table
+
+Date	Eid	Name City State	EPhone	Status
+
+
+City, State, ephone does not depend on attendance, but depends on Employee.
+
+
+
+So, we divide the table into 2. 
+
+since these 
+	city
+	state
+	ephone
+
+are dependent on employee, there evolves a table "EMPLOYEE"
+
+employee
+	eid
+	name
+	city		Bengaluru
+	state		Karnataka
+	phone
+
+attendance
+	date
+	eid
+	name
+
+
+3NF
+---
+all transitive dependencies are moved to a separate table
+
+CITY_MASTER
+Bengaluru	Karnataka
+
+De-normalization
+----------------
+in the interest of improving the query speed,
+we introduce some amount of redundancy.
+
+BCNF
+----
+	Boyce	Codd NF
+
+
+-------------------
+RDBMS Products
+	Oracle corporation	
+		Oracle rdbms
+		MySQL
+
+
+	Microsoft corporation
+		MS SQL Server
+
+
+
+		
+Postgres SQL
+
+Post + Ingres
+
+Supa base
+	authentication services
+	database
+
+
+sql:	Structured Query Language
+
+DDL	Data Definition Language	
+		CREATE, ALTER, DROP, TRUNCATE
+DML	Data Manipulation Language
+		INSERT, UPDATE, DELETE
+DQL	Data Query Language
+		SELECT
+			
+DCL	Data Control Language
+		GRANT, REVOKE
+TCL	Transaction Control Language
+		COMMIT, SAVEPOINT, ROLLBACK
+
+
+
+
+
+
+SELECT * FROM EMPLOYEES;		//* means? all columns
+
+SELECTION
+PROJECTION
+UNION
+INTERSECTION
+PRODUCT
+
+
+Projection:
+	SELECT EID, NAME, DEPARTMENT_ID FROM EMPLOYEES;
+
+
+Selection:
+	select * from employees where salary >1000;
+
+Union:
+	combine the results of 2 queries
+
+
+		SELECT * FROM EMPLOYEES WHERE department<>'ECE'
+		UNION
+		SELECT * FROM EMPLOYEE WHERE department='EEE';
+
+if first select returns 10 rows
+if second select returns 10 rows
+then how many rows you will get after UNION?
+	total=upto 20 rows
+
+UNION ALL means?		10 + 10 is always 20
+
+Intersect
+	common rows only
+
+
+Minus
+	all rows returned by first query - common rows with second
+
+Product
+	10 customers
+	10 products
+	sales may have upto 100 rows
+	this is cartesian product
+
+
+
+	char 	vs 	nchar
+
+
+	char(5)	vs	nchar(5)
+
+
+
+CREATE TABLE USER_MASTER
+(
+username VARCHAR2(20) PRIMARY KEY,
+password VARCHAR2(20) not null
+);
+
+
+
+INSERT INTO USER_MASTER VALUES('dinesh','dinesh@123');
+
+INSERT INTO USER_MASTER VALUES('jag','jag@123');
+
+
+how can we write a java program to check if entered username and password are correct?
+
+String username;
+String password;
+
+get input from the user.
+
+sql injection:
+
+Enter your username:i dont know' or 1=1 --
+Enter your password:i dont care
+The sql statement was:
+SELECT * FROM USER_MASTER WHERE USERNAME='i dont know' or 1=1 --' AND PASSWORD='i dont care'
+Login is successful
+
+
+
+in order to prevent sql injection, we should not use STATEMENT, BUT we should use PREPARED STATEMENT
+
+--------------------------
+Index
+-----
+	is used to speed up the query execution.
+
+key   |	offset
+--------------
+
+
+
+
+EMPLOYEES
+ID
+NAME
+DEPARTMENT_ID
+SALARY
+
+
+
+ID is a primary key.
+
+every primary key will maintain an index. this index is called as clustered index
+
+
+
+
+
+
+
+TABLE1:		There is no primary key.
+
+TABLE2:		Can we create a foreign key that references TABLE1?
+		Yes, we can create a foreign key that references
+			column(s) in TABLE 1 which is
+				UNIQUE and NOT NULL
+
+Oracle suggests you to create index on columns, only if
+	your search results <= 2% of the total rows.
+
+
+EMPLOYEES table has 100 rows.
+you are searching based on a column "city" and you get
+1 row or 2 row as result. Then city can be indexed.
+
+otherwise, index is a burden.
+
+in select statement, where condition uses indexed column, then index helps to retrieve result quickly. 
+
+if you use
+SELECT * FROM EMPLOYEES;		//no use of any index
+
+SELECT * FROM EMPLOYEES WHERE DEPARTMENT_ID=20;
+
+indexes are enemy for DML
+
+CREATE INDEX idx1 ON EMPLOYEES(UPPER(CITY));
+
+SELECT * FROM EMPLOYEES WHERE CITY='Chennai';	//no use of index
+SELECT * FROM EMPLOYEES WHERE CITY=UPPER('Bengaluru');	//useful
+------------------
+JOINS
+	are used to retrieve data from more than 1 table.
+
+types of JOINs
+	INNER JOIN		
+	LEFT OUTER JOIN
+	RIGHT OUTER JOIN
+	FULL OUTER JOIN
+	CROSS JOIN
+	SELF JOIN
+	EQUI JOIN
+	NON EQUI JOIN
+	NATURAL JOIN
+
+
+
+
+
+
+
+
+
+inner join
+	returns all records from both table wherever join condition 	returns true. Basically, only matching data found.
+
+	some people uses inner join instead of EXISTS
+		EXISTS operator is usually used with sub queries.
+
+
+	
+SELF JOIN
+-----------
+
+
+SELECT E.EMPLOYEE_ID, E.FIRST_NAME, E.MANAGER_ID, M.FIRST_NAME||' '||M.LAST_NAME
+from HR.EMPLOYEES E
+JOIN HR.EMPLOYEES M
+ON E.MANAGER_ID=M.EMPLOYEE_ID
+ORDER BY E.EMPLOYEE_ID;

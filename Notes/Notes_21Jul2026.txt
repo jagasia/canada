@@ -1,0 +1,171 @@
+Aggregation:
+what is the purpose of group by clause?
+	
+where is used to restrict rows
+having is used to restrict groups
+
+where does not allow aggregate functions in the expression.
+having allows.
+
+
+------------------
+PL/SQL
+------
+	Procedural Language Extension for SQL
+		it gives procedural capabilities to SQL
+
+A plsql program can contain the following blocks:
+
+BEGIN
+END;
+
+
+in other languages
+{
+}
+the above is a block
+
+in plsql BEGIN END is a block
+
+DECLARE		is an optional block
+EXCEPTION	is an optional block
+
+
+
+DECLARE
+	x int;
+BEGIN
+	x:=20;
+	DBMS_OUTPUT.PUT_LINE(x);
+EXCEPTION
+	
+END;
+
+The above program is an anonymous plsql program. Because, there is no name for this program. This is not stored in the database. the program is not stored in the database.
+
+these anonymous programs, are executed.
+
+/ is used to run these programs
+
+
+data types in PL/SQL:
+NUMBER
+CHAR
+NCHAR
+VARCHAR2
+VARRAY
+
+
+Activity
+----------
+identify various data types that are used in PL/SQL
+
+DBMS_OUTPUT.PUT_LINE() is used to print
+
+------------------------------
+WHILE X<20
+LOOP
+
+END LOOP;
+
+FOR I IN 1..10
+LOOP
+END LOOP;
+
+IF X>20 THEN
+ELSIF X>10 THEN
+ELSE
+
+END IF;
+
+-----------------
+
+BEGIN
+	SELECT * FROM EMPLOYEES;
+END;
+/
+
+Answer:
+ERROR
+
+
+
+DECLARE
+    SAL INT:=0;
+BEGIN
+select SALARY INTO SAL from hr.employees WHERE employee_id=100;
+DBMS_OUTPUT.PUT_LINE('The salary of employee whose id is 100 is '||SAL);
+END;
+
+
+
+
+
+
+
+What is the difference between procedure and function?
+	procedures do not have return statement. but functions have.
+	functions can only return one thing. but procedures can have lot of output parameters.
+
+
+in java:
+	void display(){
+		return;
+	}
+
+	int sum(int i, int j){
+		return i+j;
+	}
+
+
+
+scanf("%d",&x);		x is an output parameter
+
+
+sqr(x,y);
+
+
+x:=fn1();
+
+prc1(x,y,z);
+
+
+CREATE OR REPLACE PROCEDURE PRCFINDSAL(EID INT, SAL OUT INT)
+AS
+BEGIN
+    SELECT SALARY INTO SAL FROM EMPLOYEES WHERE EMPLOYEE_ID=EID;
+END;
+
+
+create or replace function fn1
+return NUMBER
+as
+BEGIN
+    RETURN 101;
+END;
+
+	
+
+CREATE OR REPLACE FUNCTION FNSAL(EID INT)
+RETURN NUMBER
+AS
+SAL INT;
+BEGIN
+    SELECT SALARY INTO SAL FROM EMPLOYEES WHERE EMPLOYEE_ID=EID;
+    RETURN SAL;
+END;
+
+
+
+CREATE OR REPLACE FUNCTION FNBONUS (EID INT)
+RETURN NUMBER
+AS
+SAL INT;
+BEGIN
+    SELECT SALARY INTO SAL FROM EMPLOYEES WHERE EMPLOYEE_ID=EID;
+    RETURN SAL*0.5;
+END;
+
+SELECT EMPLOYEE_ID,SALARY, FNBONUS(EMPLOYEE_ID) BONUS FROM EMPLOYEES;
+
+

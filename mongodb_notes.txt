@@ -1,0 +1,121 @@
+==========================
+MONGODB - FIND DOCUMENTS
+==========================
+
+1. Find all documents
+
+Filter
+
+{}
+
+Equivalent SQL
+
+SELECT * FROM employees;
+
+
+----------------------------------------
+
+2. Find employee by empId
+
+Filter
+
+{
+  "empId": 100
+}
+
+Equivalent SQL
+
+SELECT *
+FROM employees
+WHERE empId = 100;
+
+
+----------------------------------------
+
+3. Find employees with salary > 50000
+
+Filter
+
+{
+  "salary": {
+    "$gt": 50000
+  }
+}
+
+Equivalent SQL
+
+SELECT *
+FROM employees
+WHERE salary > 50000;
+
+
+----------------------------------------
+
+4. Find employees in IT department
+
+Filter
+
+{
+  "department": "IT"
+}
+
+Equivalent SQL
+
+SELECT *
+FROM employees
+WHERE department = 'IT';
+
+
+----------------------------------------
+
+5. Find employees in IT department with salary > 40000
+
+Filter
+
+{
+  "department": "IT",
+  "salary": {
+    "$gt": 40000
+  }
+}
+
+Equivalent SQL
+
+SELECT *
+FROM employees
+WHERE department = 'IT'
+AND salary > 40000;
+
+
+----------------------------------------
+
+6. Explain the document
+
+{
+  "_id": ObjectId("..."),
+  "empId": 100,
+  "name": "Jag",
+  "salary": 50000,
+  "department": "IT"
+}
+
+_id        -> Auto-generated unique identifier (similar to Primary Key)
+empId      -> Employee Number
+name       -> Employee Name
+salary     -> Employee Salary
+department -> Employee Department
+
+
+----------------------------------------
+
+SQL vs MongoDB
+
+SQL Database      -> MongoDB Database
+Table             -> Collection
+Row               -> Document
+Column            -> Field
+Primary Key       -> _id
+SELECT            -> Find
+INSERT            -> Insert Document
+UPDATE            -> Update Document
+DELETE            -> Delete Document
