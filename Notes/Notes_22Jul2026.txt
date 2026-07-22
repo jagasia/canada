@@ -1,0 +1,71 @@
+Automated Testing & Quality Gates (Part 1)
+
+"Unit, Integration, API & Frontend testing
+Continuous testing
+Veracode demo"
+----------------------------
+Testing
+-------
+	testing team works in very early phases of the SDLC
+	But the testing is done after coding.
+
+if a code is tested, then it is unit testing.
+
+unit may be a method
+
+Types of testing:
+	unit testing
+	integration testing
+
+	functional testing
+		black box testing
+
+	code quality testing
+		white/ glass box testing
+
+	requirements testing
+	acceptability testing
+	regression testing
+	stress testing
+	usability testing
+
+models of testing
+	V model
+	W model
+
+Junit
+-----
+
+
+isPrime(22)		returns false
+
+it is functionally correct. but the logic?
+
+	for(int i=2;i<input;i++)
+	{
+		if(input%i==0)
+			return false;
+	}
+	return true;
+
+the above code is not good in performance. 
+
+we can write
+
+	for(int i=2;i<=input/2;i++)
+
+the above is better.
+
+but
+	for(int i=2;i<=Math.sqrt(input);i++)
+
+the above is best as of now.
+
+
+
+-----
+SonarQube
+	is used to analyse the code quality
+
+
+
