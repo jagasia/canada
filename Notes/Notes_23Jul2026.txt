@@ -1,0 +1,18 @@
+code quality and test coverage.
+SonarQube
+----------
+download SonarQube from sonarsource.
+
+extract to D:\Softwares
+
+go inside the folder "\bin\windows-x86-64"
+then in cmd
+
+D:\Softwares\sonarqube-26.7.0.124771\bin\windows-x86-64>StartSonar.bat
+
+first time, login using
+	admin
+	admin
+
+and it will ask you to change the password.
+	
