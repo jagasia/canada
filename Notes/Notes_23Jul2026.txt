@@ -16,3 +16,21 @@ first time, login using
 
 and it will ask you to change the password.
 	
+lets plan a demo:
+
+we will create a maven project quickstart archetype, and create some poor coding.
+then we will measure the code quality using SonarQube.
+
+mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+  -Dsonar.projectKey=sonar-demo-1 \
+  -Dsonar.projectName='sonar-demo-1' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_1dc797108c05e98d7b50c86855fe37eb6fd6a101
+
+
+Jenkins
+-------
+what is CI/CD?
+	continuous Integration Continuous Deployment
+
+

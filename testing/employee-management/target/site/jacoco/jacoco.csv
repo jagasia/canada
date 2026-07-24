@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+employee-management,com.example.employeemanagement.model,Employee,92,30,11,1,18,11,14,5,8,5
+employee-management,com.example.employeemanagement.repository,InMemoryEmployeeRepository,11,31,0,0,3,6,2,4,2,4
+employee-management,com.example.employeemanagement,EmployeeManagementApplication,8,0,0,0,3,0,2,0,2,0
+employee-management,com.example.employeemanagement.service.impl,EmployeeServiceImpl,0,57,0,6,0,17,0,9,0,6

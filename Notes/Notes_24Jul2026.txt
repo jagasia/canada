@@ -1,0 +1,150 @@
+Observability:
+Before observability, we should know what is debugging.
+
+Debugging:
+	finding the bugs in the program.
+	what are the techniques used to debug a program?
+		seeing the code and finding the bug
+		running test cases will show bugs. So you start 			debugging.
+		IDEs provide debug options.
+		they are:
+			spring tool suite provides debug tools
+			they come into picture when you debug not run
+
+	
+
+debugging in sts/eclipse.
+
+break point
+	we can place breakpoint in any executable line.
+	when we run the code in debug mode, the program halts here.
+
+step into
+	next line
+	if it is function/method call, then it steps into that method
+
+step over
+	next line
+	even if it is a function call, it completes that function and moves next line here only.
+
+step return/step exit/ step out
+	finish the execution of current function and return to the calling function.
+
+variables window
+expressions window
+break points window
+
+------------------------------
+You learned debugging.
+
+What are the limitations of debugging:
+	we do debugging, by seeing the code with our eyes. but it cannot be reported or recorded.
+
+logs
+traces
+metrics
+
+
+
+log types:
+	info
+	warn
+	debug
+	trace
+	error
+
+
+
+logging.level.root=WARN
+
+
+
+
+
+we can also configure our application such that, the logging is done in file system.
+
+by default, unless specified, logging is in STDOUT
+console.
+
+file system also can be rolling files
+
+Activity:
+---------
+debugging
+logging
+
+-------------------------
+Splunk
+------
+
+Log analysis tool
+
+D:\Softwares
+
+
+docker run ^
+-e SPLUNK_START_ARGS=--accept-license ^
+-e SPLUNK_PASSWORD=YourPassword123! ^
+-p 8000:8000 ^
+-p 8088:8088 ^
+-p 9997:9997 ^
+-v D:\Softwares ^
+--name splunk ^
+splunk/splunk:latest
+
+
+docker run ^
+-e SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com ^
+-e SPLUNK_START_ARGS=--accept-license ^
+-e SPLUNK_PASSWORD=YourPassword123! ^
+-p 8000:8000 ^
+-p 8088:8088 ^
+-p 9997:9997 ^
+-v D:\Softwares ^
+--name splunk ^
+splunk/splunk:latest
+
+
+----------------------
+calling webservice
+	so far we called webservices using endpoint	
+		from postman
+		from hopscotch
+		from browser's address bar (GET)
+		from swagger ui
+		from a vuejs program		axios
+		from a javascript program	fetch
+
+	why not from
+		a java code?
+		another webservice
+		spring boot app			RestTemplate
+		spring cloud approach		Feign client
+
+
+Spring cloud
+	Eureka server and client	service discovery
+	API Gateway	
+	Circuit breaker
+	Load Balancer
+		
+
+from java code (core java code) how we can call a restful webservice?
+
+@Old
+
+@interface Old
+
+
+request param vs path variable
+	
+request param:
+	http://localhost:8080/employee?id=20&name=raja&
+
+path variable:
+	http://localhost:8080/employee/20
+
+
+
+
+

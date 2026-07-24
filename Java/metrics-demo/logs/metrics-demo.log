@@ -1,0 +1,285 @@
+2026-07-24 11:58:09 [restartedMain] INFO  c.e.demo.MetricsDemoApplication - Starting MetricsDemoApplication using Java 21.0.10 with PID 21892 (D:\Jag\Empower\CanadaLife\Java\metrics-demo\target\classes started by Jagadeeswaran in D:\Jag\Empower\CanadaLife\Java\metrics-demo)
+2026-07-24 11:58:09 [restartedMain] DEBUG c.e.demo.MetricsDemoApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2026-07-24 11:58:09 [restartedMain] INFO  c.e.demo.MetricsDemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-24 11:58:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-24 11:58:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-24 11:58:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-07-24 11:58:09 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-24 11:58:09 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2026-07-24 11:58:09 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-07-24 11:58:09 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 816 ms
+2026-07-24 11:58:10 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2026-07-24 11:58:10 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 10 mappings in 'requestMappingHandlerMapping'
+2026-07-24 11:58:10 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-07-24 11:58:10 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-07-24 11:58:10 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-07-24 11:58:10 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-07-24 11:58:10 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2026-07-24 11:58:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-07-24 11:58:10 [restartedMain] INFO  c.e.demo.MetricsDemoApplication - Started MetricsDemoApplication in 1.754 seconds (process running for 2.002)
+2026-07-24 11:58:32 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-24 11:58:32 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4083de33
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1371f811
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-07-24 11:58:32 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 11:58:32 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 11:58:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 11:58:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 11:58:32 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 11:58:32 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs/swagger-config", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-07-24 11:58:32 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-07-24 11:58:32 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2026-07-24 11:58:32 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:32 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-07-24 11:58:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-07-24 11:58:32 [http-nio-8080-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 85 ms
+2026-07-24 11:58:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-07-24 11:58:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-07-24 11:58:32 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:58:33 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:9411/api/v2/spans
+2026-07-24 11:58:33 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-07-24 11:58:33 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Writing [[B@10b7e265] as "application/json"
+2026-07-24 11:58:33 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2026-07-24 11:58:33 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: getsockopt)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinRestTemplateSender.postSpans(ZipkinRestTemplateSender.java:49)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40)
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123)
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266)
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:282)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1320)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1139)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1068)
+	at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:79)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 9 common frames omitted
+2026-07-24 11:58:45 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/greeting/Jag", parameters={}
+2026-07-24 11:58:45 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo.controller.MetricsController#greeting(String)
+2026-07-24 11:58:45 [http-nio-8080-exec-8] INFO  c.e.d.controller.MetricsController - Greeting endpoint called with name: Jag
+2026-07-24 11:58:45 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2026-07-24 11:58:45 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Hello, Jag!"]
+2026-07-24 11:58:45 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 11:59:12 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/process/1000", parameters={}
+2026-07-24 11:59:12 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo.controller.MetricsController#processRequest(long)
+2026-07-24 11:59:12 [http-nio-8080-exec-9] INFO  c.e.d.controller.MetricsController - Processing request for 1000 ms
+2026-07-24 11:59:13 [http-nio-8080-exec-9] INFO  c.e.d.controller.MetricsController - Request processing completed in 1004 ms
+2026-07-24 11:59:13 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2026-07-24 11:59:13 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Processed for 1004 ms"]
+2026-07-24 11:59:13 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:00:00 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/swagger-ui.css", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/swagger-initializer.js", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/swagger-ui-standalone-preset.js", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/swagger-ui-bundle.js", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/index.css", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/swagger-ui-standalone-preset.js.]
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/swagger-ui-bundle.js.]
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/swagger-ui.css.]
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/index.css.]
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/swagger-initializer.js.]
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:00 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:00 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:00 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:00 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/favicon-32x32.png", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/favicon-32x32.png.]
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html/favicon-16x16.png", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/index.html/favicon-16x16.png.]
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:00 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:01 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:9411/api/v2/spans
+2026-07-24 12:00:01 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-07-24 12:00:01 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Writing [[B@1c61dfbd] as "application/json"
+2026-07-24 12:00:06 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:06 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2026-07-24 12:00:06 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:06 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:06 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:06 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2026-07-24 12:00:06 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2026-07-24 12:00:06 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2026-07-24 12:00:06 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:06 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-07-24 12:00:06 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2026-07-24 12:00:06 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:00:06 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs/swagger-config", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-07-24 12:00:06 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-07-24 12:00:06 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2026-07-24 12:00:06 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:00:06 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-07-24 12:00:06 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-07-24 12:00:06 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-07-24 12:00:06 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-07-24 12:00:06 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:00:07 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:9411/api/v2/spans
+2026-07-24 12:00:07 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-07-24 12:00:07 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Writing [[B@31c257b] as "application/json"
+2026-07-24 12:00:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator", parameters={}
+2026-07-24 12:00:17 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:00:17 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{_links={self=[Link@22734cb href = 'http://localhost:8080/actuator'], health=[Link@d6878db href = 'h (truncated)...]
+2026-07-24 12:00:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jul 24 12:00:17 IST 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-07-24 12:00:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-07-24 12:00:43 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/health", parameters={}
+2026-07-24 12:00:43 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:00:43 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:00:43 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [org.springframework.boot.actuate.health.SystemHealth@f23281e]
+2026-07-24 12:00:43 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:02:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/info", parameters={}
+2026-07-24 12:02:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:02:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:02:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{}]
+2026-07-24 12:02:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:02:41 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/metrics", parameters={}
+2026-07-24 12:02:41 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:02:41 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:02:41 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [org.springframework.boot.actuate.metrics.MetricsEndpoint$MetricNamesDescriptor@4f83ab53]
+2026-07-24 12:02:41 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:03:16 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/metrics/api.greeting.calls", parameters={}
+2026-07-24 12:03:16 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:03:16 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:03:16 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [org.springframework.boot.actuate.metrics.MetricsEndpoint$MetricDescriptor@15c8276f]
+2026-07-24 12:03:16 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:03:31 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/greeting/Dinesh", parameters={}
+2026-07-24 12:03:31 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo.controller.MetricsController#greeting(String)
+2026-07-24 12:03:31 [http-nio-8080-exec-9] INFO  c.e.d.controller.MetricsController - Greeting endpoint called with name: Dinesh
+2026-07-24 12:03:31 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2026-07-24 12:03:31 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Hello, Dinesh!"]
+2026-07-24 12:03:31 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:03:33 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/metrics/api.greeting.calls", parameters={}
+2026-07-24 12:03:33 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:03:33 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:03:33 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [org.springframework.boot.actuate.metrics.MetricsEndpoint$MetricDescriptor@7bacee2]
+2026-07-24 12:03:33 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:03:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/greeting/Reza", parameters={}
+2026-07-24 12:03:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo.controller.MetricsController#greeting(String)
+2026-07-24 12:03:40 [http-nio-8080-exec-2] INFO  c.e.d.controller.MetricsController - Greeting endpoint called with name: Reza
+2026-07-24 12:03:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2026-07-24 12:03:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Hello, Reza!"]
+2026-07-24 12:03:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:03:42 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/metrics/api.greeting.calls", parameters={}
+2026-07-24 12:03:42 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:03:42 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:03:42 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [org.springframework.boot.actuate.metrics.MetricsEndpoint$MetricDescriptor@687a460c]
+2026-07-24 12:03:42 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:08:30 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/metrics/api.greeting.calls", parameters={}
+2026-07-24 12:08:30 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/octet-stream" to []
+2026-07-24 12:08:30 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2026-07-24 12:08:30 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [org.springframework.boot.actuate.metrics.MetricsEndpoint$MetricDescriptor@61a634da]
+2026-07-24 12:08:30 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:08:39 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/greeting/Reza", parameters={}
+2026-07-24 12:08:39 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo.controller.MetricsController#greeting(String)
+2026-07-24 12:08:39 [http-nio-8080-exec-8] INFO  c.e.d.controller.MetricsController - Greeting endpoint called with name: Reza
+2026-07-24 12:08:39 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2026-07-24 12:08:39 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Hello, Reza!"]
+2026-07-24 12:08:39 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-07-24 12:08:39 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:9411/api/v2/spans
+2026-07-24 12:08:39 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-07-24 12:08:39 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate - Writing [[B@54b0886c] as "application/json"
